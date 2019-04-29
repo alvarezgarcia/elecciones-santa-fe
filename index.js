@@ -62,7 +62,6 @@ setInterval( async  () => {
       minY: 1,
     }));
 
-    console.log(`${juntos.nombre}, ${juntos.percentage.toFixed(2)}%`);
     console.log(`${fpcys.nombre}, ${fpcys.percentage.toFixed(2)}%`);
     console.log(`${juntos.nombre}, ${juntos.percentage.toFixed(2)}%`);
     console.log(`${cambiemos.nombre}, ${cambiemos.percentage.toFixed(2)}%`);
