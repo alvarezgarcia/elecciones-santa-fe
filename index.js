@@ -25,19 +25,19 @@ setInterval( async  () => {
     const [ fpcysRaw, juntosRaw, cambiemosRaw ] = detalle;
 
     const fpcys = {
-      cantidadVotos: parseInt(fpcysRaw.cantidad),
+      cantidadVotos: parseFloat(fpcysRaw.cantidad),
       nombre: fpcysRaw.candidato,
       percentage: parseFloat(fpcysRaw.porcentaje.replace(',', '.'))
     }
 
     const juntos = {
-      cantidadVotos: parseInt(juntosRaw.cantidad),
+      cantidadVotos: parseFloat(juntosRaw.cantidad),
       nombre: juntosRaw.candidato,
       percentage: parseFloat(juntosRaw.porcentaje.replace(',', '.'))
     }
 
     const cambiemos = {
-      cantidadVotos: parseInt(cambiemosRaw.cantidad),
+      cantidadVotos: parseFloat(cambiemosRaw.cantidad),
       nombre: cambiemosRaw.candidato,
       percentage: parseFloat(cambiemosRaw.porcentaje.replace(',', '.'))
     }
