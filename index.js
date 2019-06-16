@@ -68,8 +68,8 @@ setInterval( async  () => {
     console.log(`1 - ${juntos.nombre}, ${juntos.percentage.toFixed(2)}%`);
     console.log(`2 - ${cambiemos.nombre}, ${cambiemos.percentage.toFixed(2)}%`);
 
-    console.log(`\Mesas: (${cabecera[0].mesasIngresadas}/${cabecera[0].totalMesas})`);
-    console.log(`\nEscrutadas ${cabecera[0].porcentajeMesas}`);
+    console.log(`\n\Mesas: (${cabecera[0].mesasIngresadas}/${cabecera[0].totalMesas})`);
+    console.log(`Escrutadas ${cabecera[0].porcentajeMesas}`);
     console.log(cabecera[0].fechaHoraInformacion);
 
   } catch (error) {
