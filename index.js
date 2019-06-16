@@ -22,30 +22,27 @@ setInterval( async  () => {
       cabecera 
     } = values;
 
-    console.log(cabecera);
-
     const [ fpcysRaw, juntosRaw, cambiemosRaw ] = detalle;
 
     const fpcys = {
       cantidadVotos: parseInt(fpcysRaw.cantidad),
-      nombre: fpcysRaw.candidato
+      nombre: fpcysRaw.candidato,
+      percentage: parseFloat(fpcysRaw.porcentaje.replace(',', '.'))
     }
 
     const juntos = {
       cantidadVotos: parseInt(juntosRaw.cantidad),
-      nombre: juntosRaw.candidato
+      nombre: juntosRaw.candidato,
+      percentage: parseFloat(juntosRaw.porcentaje.replace(',', '.'))
     }
 
     const cambiemos = {
       cantidadVotos: parseInt(cambiemosRaw.cantidad),
-      nombre: cambiemosRaw.candidato
+      nombre: cambiemosRaw.candidato,
+      percentage: parseFloat(cambiemosRaw.porcentaje.replace(',', '.'))
     }
 
     const totalVotes = fpcys.cantidadVotos + juntos.cantidadVotos + cambiemos.cantidadVotos;
-
-    fpcys.percentage = getPercentage(fpcys.cantidadVotos, totalVotes) || 0;
-    juntos.percentage = getPercentage(juntos.cantidadVotos, totalVotes) || 0;
-    cambiemos.percentage = getPercentage(cambiemos.cantidadVotos, totalVotes) || 0;
 
     process.stdout.write('\033c');
     
@@ -64,9 +61,9 @@ setInterval( async  () => {
     }));
 
     console.log('\n');
-    console.log(`0 - ${fpcys.nombre}, ${fpcys.percentage.toFixed(2)}%`);
-    console.log(`1 - ${juntos.nombre}, ${juntos.percentage.toFixed(2)}%`);
-    console.log(`2 - ${cambiemos.nombre}, ${cambiemos.percentage.toFixed(2)}%`);
+    console.log(`0 - ${fpcys.nombre}\n\t${fpcys.cantidadVotos} votos - ${fpcys.percentage.toFixed(2)}%\n`);
+    console.log(`1 - ${juntos.nombre}\n\t${juntos.cantidadVotos} votos - ${juntos.percentage.toFixed(2)}%\n`);
+    console.log(`2 - ${cambiemos.nombre}\n\t${cambiemos.cantidadVotos} votos - ${cambiemos.percentage.toFixed(2)}%`);
 
     console.log(`\n\Mesas: (${cabecera[0].mesasIngresadas}/${cabecera[0].totalMesas})`);
     console.log(`Escrutadas ${cabecera[0].porcentajeMesas}`);
