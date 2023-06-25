@@ -12,6 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "babar": "^0.2.0",
-    "superagent": "^5.0.4"
+    "superagent": "^5.3.1"
   }
 }
